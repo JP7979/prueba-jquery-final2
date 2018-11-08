@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Pacifico" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/bootstrap.css">	
 	<link rel="stylesheet" href="assets/css/estilo.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
 
 	
 
@@ -19,9 +19,7 @@
    <section class="container">
         <div class="row">
             <article class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
               <form id="myform">
-
                 <select class="form-control form-control-lg">
                   <option>Seleccione una foto de perfil</option>
                   <option>Seleccione una foto de perfil</option>
@@ -33,17 +31,14 @@
                 <textarea id="subject" name="subject" placeholder="Escriba.." style="height:100px"></textarea>
 
                 <input type="submit" value="ENVIAR">
-              </form>
-                
+              </form>   
             </article>
 
             <article id="articulo" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <div class="nota">
-                <div class="cerrar_2"></div>
                 <div class="cerrar"></div>
-                
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, ut. Voluptatem omnis facere dolorem dignissimos quasi fuga tempore rem, perferendis id obcaecati officiis 
-                <i class="fas fa-heart-circle"></i>
+                <i class="cerrar_2 fas fa-heart card__like"></i>  
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, ut. Voluptatem omnis facere dolorem dignissimos quasi fuga tempore rem, perferendis id obcaecati officiis               
               </div>  
             </article>
             
@@ -62,17 +57,22 @@
                     '<div class="nota">'
                     + '<div class="cerrar">'
                     + '</div>'
-                    + '<div class="cerrar_2">'
-                    + '</div>'
+                    + '<i class="cerrar_2 fas fa-heart card__like">'
+                    + '</i>'
                     + text
                     + '</div>')
           $('#subject').val("");   // dejar las casillas vacias al enviar
        });
 
     $("#articulo").on("click", ".cerrar",function(){ // cerrar nota
-       $(this).parent().fadeOut(900); // animacion al cerrar la ventana
-         
+       $(this).parent().fadeOut(900); // animacion al cerrar la ventana    
        })
+
+    $("#articulo").on("click", ".card__like", function(event) {
+     event.stopPropagation(); 
+     event.preventDefault(); 
+     $(this).toggleClass('card__like--red');
+  });
 
 
            })

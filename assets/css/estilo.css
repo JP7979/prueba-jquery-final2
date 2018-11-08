@@ -33,7 +33,7 @@ body{
 }
 
 .cerrar_2{
-    background-color: red;
+
     border-radius: 50%;
     width: 30px;
     height: 30px;
@@ -66,29 +66,16 @@ input[type=submit]:hover {
     background-color: #6fbaed;
 }
 
-
-
-
-.like{
-    background-color: #6fbaed;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    float: left;
-
 }
 .card__like {
   color: #ccc;
   display: block;
-  padding: 28px 0 0 20px;
-  text-align: center;
   transition: all .35s ease-out;
-  width: 120px;
 }
 
 .card__like--red {
 
-  background-color: tomato;
+  color: tomato;
 }
 
 
