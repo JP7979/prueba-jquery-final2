@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Pacifico" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/bootstrap.css">	
+	<link rel="stylesheet" href="assets/css/estilo.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+	
+
+
+</head>
+<body>
+
+   <section class="container">
+        <div class="row">
+            <article class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+              <form id="myform">
+
+                <select class="form-control form-control-lg">
+                  <option>Seleccione una foto de perfil</option>
+                  <option>Seleccione una foto de perfil</option>
+                  <option>Seleccione una foto de perfil</option>
+                  <option>Seleccione una foto de perfil</option>
+                </select>
+
+                <label for="subject">Asunto</label>
+                <textarea id="subject" name="subject" placeholder="Escriba.." style="height:100px"></textarea>
+
+                <input type="submit" value="ENVIAR">
+              </form>
+                
+            </article>
+
+            <article id="articulo" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="nota">
+                <div class="cerrar_2"></div>
+                <div class="cerrar"></div>
+                
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, ut. Voluptatem omnis facere dolorem dignissimos quasi fuga tempore rem, perferendis id obcaecati officiis 
+                <i class="fas fa-heart-circle"></i>
+              </div>  
+            </article>
+            
+        </div>
+ </section>
+
+	<script src="assets/js/jquery-3.3.1.min.js"> </script>
+	<script src="assets/js/bootstrap.js"></script>
+
+  <script>
+    $("document").ready( function () {  
+      $("#myform").on("submit", function(event){;
+        var text = $("#subject").val();
+         event.preventDefault();
+         $("#articulo").append( 
+                    '<div class="nota">'
+                    + '<div class="cerrar">'
+                    + '</div>'
+                    + '<div class="cerrar_2">'
+                    + '</div>'
+                    + text
+                    + '</div>')
+          $('#subject').val("");   // dejar las casillas vacias al enviar
+       });
+
+    $("#articulo").on("click", ".cerrar",function(){ // cerrar nota
+       $(this).parent().fadeOut(900); // animacion al cerrar la ventana
+         
+       })
+
+
+           })
+ 
+
+  </script>  
+
+</body>
+</html>
